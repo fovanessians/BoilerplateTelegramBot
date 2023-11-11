@@ -8,7 +8,7 @@ IDE: Replit SaaS
 
 The coding environment, classes and methods employed are from 
 
-pyTelegramBotAPI 4.14.0 & python-telegram-bot v20.6
+**_pyTelegramBotAPI 4.14.0 & python-telegram-bot v20.6_**
 
 BOT API & Documentation:
 
@@ -20,10 +20,12 @@ Note: Generate API Key
 
 Redacted Error & Exception Handling, other than common HTTP codes, which are viewable in logging, as it might clutter chat messages.
 If Error handling is required, import the following dependencies:
-from pyrogram.errors import RPCError
+
+**_from pyrogram.errors import RPCError_**
+
 RPCError is able to catch all Telegram API related errors.
 
-Features:
+**Features:**
 
 1.Messaging handling
 
