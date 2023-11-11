@@ -336,7 +336,7 @@ def goodNight():
     updateTimeObj = datetime.datetime.now()
     night = Time(updateTimeObj.hour, updateTimeObj.minute)
     if (night.hour == 3 and night.minute == 3):
-      bot.send_message(-1001369983015, "Good Night!")
+      bot.send_message(-### get telegram chat ID, "Good Night!")
     time.sleep(31)
     del night
     if x==1440:
@@ -348,7 +348,7 @@ def morning():
     updateTimeObj = datetime.datetime.now()
     morning = Time(updateTimeObj.hour, updateTimeObj.minute)
     if (morning.hour == 12 and morning.minute == 15):
-      bot.send_message(-1001369983015, "Good Morning!")
+      bot.send_message(-## get telegram chat id, "Good Morning!")
     time.sleep(31)
     del morning
     if x==1440:
@@ -360,7 +360,7 @@ def test():
     updateTimeObj = datetime.datetime.now()
     test = Time(updateTimeObj.hour, updateTimeObj.minute)
     if (test.minute == 56):
-      bot.send_message(-681387171, 'test')
+      bot.send_message(- ######get telegram chat id, 'test')
     #print(test.minute)
     time.sleep(31)
     del test
@@ -373,7 +373,7 @@ def afternoon():
     updateTimeObj = datetime.datetime.now()
     afternoon = Time(updateTimeObj.hour, updateTimeObj.minute)
     if (afternoon.hour == 19 and afternoon.minute == 25):
-      bot.send_message(-1001369983015, "Good afternoon")
+      bot.send_message(-######### get telegram chat id, "Good afternoon")
     time.sleep(29)
     del afternoon
     if x==1440:
