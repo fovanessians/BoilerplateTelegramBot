@@ -7,8 +7,8 @@ import logging
 import random
 from random_word import RandomWords
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
-from telegram.ext import filters
+#from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
+#from telegram.ext import filters
 import sys
 import time
 import datetime
@@ -21,6 +21,23 @@ import requests
 #socket dependencies -------
 import platform
 import socket
+
+
+
+
+import requests
+import telebot
+from random_words import RandomWords
+from telebot import types
+
+'''from telegram.ext import Application
+application = Application.builder().token('BOT_TOKEN').context_types(context_types).read_timeout(read_timeout).build()'''
+
+import datetime
+
+#socket dependencies -------
+
+from telebot.types import InlineKeyboardButton
 #---------------------------
 
 #_______________________________________________
