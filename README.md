@@ -43,5 +43,6 @@ RPCError is able to catch all Telegram API related errors.
 
 8.Multi-threading capability allowing timed notices for chat members while asynchronously polling chat handlers.
 
-
+07/06/2026: Added Classification ML/AI capability SigLip zeroshot classification.
+with messaging , reply, and uploading  handlers.
 
