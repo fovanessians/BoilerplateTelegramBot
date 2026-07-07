@@ -23,8 +23,6 @@ import platform
 import socket
 
 
-
-
 import requests
 import telebot
 from random_words import RandomWords
@@ -36,6 +34,7 @@ application = Application.builder().token('BOT_TOKEN').context_types(context_typ
 import datetime
 
 #socket dependencies -------
+#--------check dependencies 07/06/2026------------
 
 from telebot.types import InlineKeyboardButton
 #---------------------------
