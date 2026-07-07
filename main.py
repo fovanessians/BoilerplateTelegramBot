@@ -323,6 +323,50 @@ def main():
   def reply_command1(message):
     bot.reply_to(message,
                  "response")
+
+#############CLASSIFICATION###############
+##########################################
+from transformers import pipeline
+from PIL import Image
+import io
+# Load Google's SigLIP model (Open weights, Apache 2.0 license)
+'''zero-shot image classification pipeline using the SigLIP (Sigmoid Loss for Language Image Pre-Training) '''
+classifier = pipeline(
+  "zero-shot-image-classification", model="google/siglip-so400m-patch14-384")
+
+@bot.message_handler(commands=["animals"])
+def animals(message):  
+  #input file_id
+  bot.send_message(message.chat.id, "Upload the photo you want to classify")
+  # Register id handler for the next message
+  bot.register_next_step_handler(message, process_id)
+  
+def process_id(message):
+  if message.content_type != 'photo':
+    bot.reply_to(message, "That's not a photo.")
+  else:  
+      # Download the image from Telegram
+      file_id = message.photo[-1].file_id
+      file_info = bot.get_file(message.photo[-1].file_id)
+      downloaded_file = bot.download_file(file_info.file_path)
+      bot.send_message(message.chat.id, f"processing...\n *{file_id}* \n into the Bretters algorithm, please wait...", parse_mode="Markdown")
+      # Convert bytes to PIL Image
+      image = Image.open(io.BytesIO(downloaded_file)).convert("RGB")
+      #classification algorithm
+      results = classifier(image, candidate_labels=["eagle or   rabbit", "a photo of a tough, hawk"]) #results[0]['label']
+      listResults = []
+      for item in results:
+        label = item.get('label')
+        score = item.get('score')
+        listResults.append((label, score))
+  print(listResults[0][0])
+  print(listResults[0][1])
+  print(listResults[1][0])
+  print(listResults[1][1])
+  bot.reply_to(message, 'strong probability of being ' + listResults[0][0])
+
+##########################################
+#############CLASSIFICATION###############
  
 
 class Time:
